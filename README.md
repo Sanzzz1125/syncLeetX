@@ -1,6 +1,6 @@
 # SyncLeetX 🚀
 
-Automatically sync your LeetCode solutions to GitHub with beautiful README generation, difficulty-based folders, and live profile statistics.
+Automatically sync your accepted LeetCode solutions to GitHub with beautiful README generation, difficulty-based folders, and live profile statistics.
 
 ---
 
@@ -379,21 +379,23 @@ If you like this project:
 
 ---
 
-📚 Reference Repository
+# 📚 Reference Repository
 
 Want to see a real working synced LeetCode repository generated using SyncLeetX?
 
 Check out my LeetCode repository for reference:
 
-https://github.com/Sanzzz1125/LeetCode-practice
+[https://github.com/Sanzzz1125/LeetCode-practice](https://github.com/Sanzzz1125/LeetCode-practice)
 
 You can explore:
 
-Auto-generated README files
-Difficulty-based folder structure
-Synced LeetCode statistics
-Problem-wise organized solutions
-Real GitHub sync workflow
+* Auto-generated README files
+* Difficulty-based folder structure
+* Synced LeetCode statistics
+* Problem-wise organized solutions
+* Real GitHub sync workflow
+
+---
 
 # 🚀 SyncLeetX
 
