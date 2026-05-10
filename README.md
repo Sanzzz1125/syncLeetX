@@ -72,17 +72,45 @@ LeetCode-practice
 
 # ⚙️ Installation Guide
 
-## 1. Clone Repository
+## 📥 1. Download the Project
+
+Clone the repository:
 
 ```bash
 git clone https://github.com/Sanzzz1125/SyncLeetX.git
 ```
 
+OR download the ZIP directly from GitHub.
+
 ---
 
-## 2. Open Chrome Extensions
+## 📂 2. Project Structure
 
-Go to:
+Your extension files should look like this:
+
+```text
+SyncLeetX
+│
+└── extension
+    │
+    ├── background.js
+    ├── constants.js
+    ├── content.js
+    ├── extractor.js
+    ├── inject.js
+    ├── manifest.json
+    ├── popup.css
+    ├── popup.html
+    ├── popup.js
+    ├── storage.js
+    └── sync.js
+```
+
+---
+
+## 🌐 3. Open Chrome Extensions
+
+Open:
 
 ```text
 chrome://extensions
@@ -96,7 +124,7 @@ Developer Mode
 
 ---
 
-## 3. Load Extension
+## 🧩 4. Load the Extension
 
 Click:
 
@@ -104,7 +132,13 @@ Click:
 Load unpacked
 ```
 
-Select the extension folder.
+Then select:
+
+```text
+SyncLeetX/extension
+```
+
+The extension should now appear inside Chrome.
 
 ---
 
@@ -166,7 +200,11 @@ Never share your token publicly.
 
 # 🔧 Extension Configuration
 
-Open the extension popup and enter:
+After loading the extension:
+
+1. Click the SyncLeetX extension icon in Chrome
+2. Open the popup
+3. Fill in the following details:
 
 | Field           | Example           |
 | --------------- | ----------------- |
@@ -174,15 +212,87 @@ Open the extension popup and enter:
 | Repository Name | LeetCode-practice |
 | GitHub Token    | github_pat_xxxxx  |
 
-Click:
+Then click:
 
 ```text
 Save
 ```
 
+The extension securely stores these values locally using:
+
+```text
+chrome.storage.local
+```
+
 ---
 
 # 🚀 Usage
+
+## 1. Open LeetCode
+
+Go to:
+
+[https://leetcode.com](https://leetcode.com)
+
+---
+
+## 2. Solve Any Problem
+
+Write your solution normally inside the LeetCode editor.
+
+Supported languages:
+
+* Java
+* C++
+* Python
+* JavaScript
+* C
+
+---
+
+## 3. Submit the Solution
+
+Click:
+
+```text
+Submit
+```
+
+---
+
+## 4. Wait for Accepted Result
+
+Once the solution is accepted, SyncLeetX automatically:
+
+✅ Extracts your code
+✅ Detects problem details
+✅ Fetches LeetCode statistics
+✅ Uploads files to GitHub
+✅ Updates README automatically
+
+---
+
+## 5. Check GitHub Repository
+
+Your repository will automatically update like this:
+
+```text
+LeetCode-practice
+│
+├── README.md
+│
+├── Easy
+│   └── Symmetric Tree
+│       ├── solution.java
+│       └── README.md
+│
+├── Medium
+│
+└── Hard
+```
+
+No backend server required.
+Everything works directly from the Chrome extension using GitHub APIs.
 
 1. Open any LeetCode problem
 2. Write solution
