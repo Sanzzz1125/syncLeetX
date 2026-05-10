@@ -1,0 +1,45 @@
+{
+    "manifest_version": 3,
+    "name": "SyncLeetX",
+    "version": "1.0",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "storage",
+        "cookies"
+    ],
+    "host_permissions": [
+        "https://leetcode.com/*",
+        "https://api.github.com/*"
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "inject.js"
+            ],
+            "matches": [
+                "https://leetcode.com/*"
+            ]
+        }
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://leetcode.com/*"
+            ],
+            "js": [
+                "constants.js",
+                "storage.js",
+                "extractor.js",
+                "sync.js",
+                "content.js"
+            ]
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    }
+}

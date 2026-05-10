@@ -1,0 +1,33 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title>SyncLeetX</title>
+
+        <link rel="stylesheet" href="popup.css" />
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>SyncLeetX 🚀</h1>
+
+            <p class="subtitle">Auto-sync LeetCode solutions to GitHub</p>
+
+            <input
+                id="token"
+                type="password"
+                placeholder="GitHub Fine-Grained Token"
+            />
+
+            <input id="username" placeholder="GitHub Username" />
+
+            <input id="repo" placeholder="Repository Name" />
+
+            <button id="save">Save Configuration</button>
+
+            <p id="status" class="status"></p>
+        </div>
+
+        <script src="popup.js"></script>
+    </body>
+</html>
