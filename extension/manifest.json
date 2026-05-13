@@ -1,0 +1,61 @@
+{
+    "manifest_version": 3,
+    "name": "SyncLeetX",
+    "version": "1.0",
+    "icons": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icons/icon16.png",
+            "48": "icons/icon48.png",
+            "128": "icons/icon128.png"
+        }
+    },
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "storage",
+        "cookies"
+    ],
+    "host_permissions": [
+        "https://leetcode.com/*",
+        "https://practice.geeksforgeeks.org/*",
+        "https://www.geeksforgeeks.org/*",
+        "https://api.github.com/*"
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "inject.js"
+            ],
+            "matches": [
+                "https://leetcode.com/*",
+                "https://practice.geeksforgeeks.org/*",
+                "https://www.geeksforgeeks.org/*"
+            ]
+        }
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://leetcode.com/*",
+                "https://practice.geeksforgeeks.org/*",
+                "https://www.geeksforgeeks.org/*"
+            ],
+            "js": [
+                "constants.js",
+                "storage.js",
+                "extractor.js",
+                "sync.js",
+                "content.js"
+            ]
+        }
+    ]
+}
