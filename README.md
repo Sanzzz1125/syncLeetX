@@ -1,98 +1,132 @@
 # SyncLeetX 🚀
-
-Automatically sync your accepted LeetCode solutions to GitHub with beautiful README generation, difficulty-based folders, and live profile statistics.
-
+ 
+Automatically sync your accepted LeetCode and GeeksForGeeks solutions to GitHub with beautiful README generation, difficulty-based folders, and live profile statistics — all from a Chrome extension with zero backend.
+ 
 ---
-
+ 
 # ✨ Features
-
-* 🔥 Auto-sync accepted LeetCode submissions to GitHub
-* 📂 Organizes problems by difficulty (Easy / Medium / Hard)
-* 📝 Generates README for every problem automatically
-* 📊 Live LeetCode statistics in root README
+ 
+* 🔥 Auto-sync accepted LeetCode **and GeeksForGeeks** submissions to GitHub
+* 📂 Organizes problems by difficulty (School / Basic / Easy / Medium / Hard)
+* 📝 Generates a README for every problem automatically
+* 📊 Live LeetCode **and GFG** statistics in root README
 * 🎨 Difficulty badges using shields.io
 * ⚡ Works instantly after Accepted submissions
-* 🧠 Extracts code directly from Monaco editor
+* 🧠 Extracts code directly from Monaco (LeetCode) and Ace (GFG) editors
 * 🔐 Uses Fine-Grained GitHub Personal Access Tokens
-* 🌐 No backend required
+* 🌐 No backend required — everything runs inside the extension
 * 🧩 Chrome Extension (Manifest V3)
-
 ---
-
+ 
 # 📸 Demo
-
+ 
 ## Root README Example
-
+ 
 ```md
-# LeetCode Practice 🚀
-
-![Total Solved](https://img.shields.io/badge/Total_Solved-350-blue)
-![Easy](https://img.shields.io/badge/Easy-120-brightgreen)
-![Medium](https://img.shields.io/badge/Medium-190-yellow)
-![Hard](https://img.shields.io/badge/Hard-40-red)
+# CodeSyncHub 🚀
+ 
+## 🟢 LeetCode Stats
+ 
+![Total Solved](https://img.shields.io/badge/Total_Solved-358-blue)
+![Easy](https://img.shields.io/badge/Easy-227-brightgreen)
+![Medium](https://img.shields.io/badge/Medium-121-yellow)
+![Hard](https://img.shields.io/badge/Hard-10-red)
+ 
+## 👤 LeetCode User
+Sanketh1125
+ 
+## 🔥 Latest Solved Problem
+Roman to Integer
+ 
+## 🟢 GeeksForGeeks Stats
+ 
+![Total Solved](https://img.shields.io/badge/Total_Solved-44-blue)
+![Basic](https://img.shields.io/badge/Basic-11-lightgrey)
+![Easy](https://img.shields.io/badge/Easy-23-brightgreen)
+![Medium](https://img.shields.io/badge/Medium-10-yellow)
+![Hard](https://img.shields.io/badge/Hard-0-red)
+ 
+## 🔥 Latest GFG Problem
+ZigZag Tree Traversal
 ```
-
+ 
 ---
-
+ 
 # 📂 Generated Repository Structure
-
+ 
 ```text
 LeetCode-practice
 │
-├── README.md
+├── README.md                        ← Auto-updated root stats
 │
-├── Easy
-│   ├── Symmetric Tree
-│   │   ├── solution.java
-│   │   └── README.md
-│   │
-│   └── Two Sum
-│       ├── solution.cpp
-│       └── README.md
+├── LeetCode
+│   ├── Easy
+│   │   └── Two Sum
+│   │       ├── solution.java
+│   │       └── README.md
+│   ├── Medium
+│   │   └── Pow(x, n)
+│   │       ├── solution.java
+│   │       └── README.md
+│   └── Hard
+│       └── Median of Two Sorted Arrays
+│           ├── solution.java
+│           └── README.md
 │
-├── Medium
-│   └── Pow(x, n)
-│       ├── solution.java
-│       └── README.md
-│
-└── Hard
+└── GeeksForGeeks
+    ├── School
+    │   └── Print Hello World
+    │       ├── solution.java
+    │       └── README.md
+    ├── Basic
+    │   └── Sum of Array Elements
+    │       ├── solution.java
+    │       └── README.md
+    ├── Easy
+    │   └── Reverse a String
+    │       ├── solution.java
+    │       └── README.md
+    ├── Medium
+    │   └── ZigZag Tree Traversal
+    │       ├── solution.java
+    │       └── README.md
+    └── Hard
+        └── Maximum Sum Rectangle
+            ├── solution.java
+            └── README.md
 ```
-
+ 
 ---
-
+ 
 # 🛠️ Tech Stack
-
-* JavaScript
-* Chrome Extension APIs
+ 
+* JavaScript (Chrome Extension APIs)
 * GitHub REST API
 * LeetCode GraphQL API
+* GFG Submissions API
 * Manifest V3
-
 ---
-
+ 
 # ⚙️ Installation Guide
-
+ 
 ## 📥 1. Download the Project
-
+ 
 Clone the repository:
-
+ 
 ```bash
 git clone https://github.com/Sanzzz1125/SyncLeetX.git
 ```
-
+ 
 OR download the ZIP directly from GitHub.
-
+ 
 ---
-
+ 
 ## 📂 2. Project Structure
-
-Your extension files should look like this:
-
+ 
 ```text
 SyncLeetX
 │
 └── extension
-    │
     ├── background.js
     ├── constants.js
     ├── content.js
@@ -105,272 +139,172 @@ SyncLeetX
     ├── storage.js
     └── sync.js
 ```
-
+ 
 ---
-
+ 
 ## 🌐 3. Open Chrome Extensions
-
-Open:
-
+ 
 ```text
 chrome://extensions
 ```
-
-Enable:
-
-```text
-Developer Mode
-```
-
+ 
+Enable **Developer Mode** (top right toggle).
+ 
 ---
-
+ 
 ## 🧩 4. Load the Extension
-
-Click:
-
-```text
-Load unpacked
-```
-
-Then select:
-
-```text
-SyncLeetX/extension
-```
-
-The extension should now appear inside Chrome.
-
+ 
+Click **Load unpacked** → select the `SyncLeetX/extension` folder.
+ 
+The extension icon will appear in Chrome's toolbar.
+ 
 ---
-
+ 
 # 🔑 GitHub Token Setup
-
+ 
 ## 1. Open GitHub Fine-Grained Tokens
-
-Go to:
-
+ 
 [https://github.com/settings/personal-access-tokens/new](https://github.com/settings/personal-access-tokens/new)
-
+ 
 ---
-
+ 
 ## 2. Configure Token
-
-### Token Name
-
+ 
+**Token Name**
 ```text
 SyncLeetX
 ```
-
----
-
-### Repository Access
-
-Choose:
-
+ 
+**Repository Access**
 ```text
-Only select repositories
+Only select repositories → select your practice repository
 ```
-
-Select your LeetCode repository.
-
-Example:
-
-```text
-LeetCode-practice
-```
-
----
-
-### Repository Permissions
-
+ 
+**Repository Permissions**
+ 
 | Permission | Access         |
 | ---------- | -------------- |
 | Contents   | Read and Write |
 | Metadata   | Read-only      |
-
+ 
 ---
-
-## 3. Generate Token
-
-Copy the generated token.
-
-⚠️ Important:
-Never share your token publicly.
-
+ 
+## 3. Generate and Copy Token
+ 
+⚠️ Copy it immediately — GitHub shows it only once. Never share it publicly.
+ 
 ---
-
+ 
 # 🔧 Extension Configuration
-
+ 
 After loading the extension:
-
-1. Click the SyncLeetX extension icon in Chrome
-2. Open the popup
-3. Fill in the following details:
-
+ 
+1. Click the SyncLeetX icon in Chrome
+2. Click the settings icon
+3. Fill in:
 | Field           | Example           |
 | --------------- | ----------------- |
 | GitHub Username | Sanzzz1125        |
 | Repository Name | LeetCode-practice |
-| GitHub Token    | github_pat_xxxxx  |
-
-Then click:
-
-```text
-Save
-```
-
-The extension securely stores these values locally using:
-
-```text
-chrome.storage.local
-```
-
+| GitHub Token    | github\_pat\_xxxxx |
+ 
+4. Click **Save**
+Values are stored locally using `chrome.storage.local` — never sent anywhere.
+ 
 ---
-
+ 
 # 🚀 Usage
-
-## 1. Open LeetCode
-
-Go to:
-
-[https://leetcode.com](https://leetcode.com)
-
+ 
+## LeetCode
+ 
+1. Open any problem on [https://leetcode.com](https://leetcode.com)
+2. Write your solution
+3. Click **Submit**
+4. Wait for **Accepted**
+5. SyncLeetX automatically pushes your solution to GitHub
+## GeeksForGeeks
+ 
+1. Open any problem on [https://www.geeksforgeeks.org](https://www.geeksforgeeks.org)
+2. Make sure you are **logged in**
+3. Write your solution
+4. Click **Submit**
+5. Wait for **Problem Solved Successfully** or **Correct Answer**
+6. SyncLeetX automatically pushes your solution to GitHub
 ---
-
-## 2. Solve Any Problem
-
-Write your solution normally inside the LeetCode editor.
-
-Supported languages:
-
-* Java
-* C++
-* Python
-* JavaScript
-* C
-
----
-
-## 3. Submit the Solution
-
-Click:
-
-```text
-Submit
-```
-
----
-
-## 4. Wait for Accepted Result
-
-Once the solution is accepted, SyncLeetX automatically:
-
-✅ Extracts your code
-✅ Detects problem details
-✅ Fetches LeetCode statistics
-✅ Uploads files to GitHub
-✅ Updates README automatically
-
----
-
-## 5. Check GitHub Repository
-
-Your repository will automatically update like this:
-
-```text
-LeetCode-practice
-│
-├── README.md
-│
-├── Easy
-│   └── Symmetric Tree
-│       ├── solution.java
-│       └── README.md
-│
-├── Medium
-│
-└── Hard
-```
-
-No backend server required.
-Everything works directly from the Chrome extension using GitHub APIs.
-
-1. Open any LeetCode problem
-2. Write solution
-3. Submit
-4. Wait for Accepted
-5. SyncLeetX automatically uploads:
-
-* Solution code
-* Problem README
-* Root README statistics
-
----
-
+ 
 # 📄 Example Problem README
-
+ 
 ```md
-# Symmetric Tree
-
-![Difficulty](https://img.shields.io/badge/Difficulty-Easy-brightgreen)
-
+# ZigZag Tree Traversal
+ 
+![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
+ 
 ---
-
+ 
 ## Topics
-
+ 
 - Tree
-- Depth First Search
 - Breadth First Search
-- Binary Tree
-
+- Stack
+ 
 ---
-
+ 
 ## Problem Link
-
-https://leetcode.com/problems/symmetric-tree/
-
+ 
+https://www.geeksforgeeks.org/problems/zigzag-tree-traversal/
+ 
 ---
-
+ 
+## Problem Statement
+ 
+Given a Binary Tree, find the zigzag level order traversal...
+ 
+---
+ 
 ## Language
-
+ 
 java
-```
-
+ 
 ---
-
+ 
+Powered by SyncLeetX ⚡
+```
+ 
+---
+ 
 # 🧠 How It Works
-
+ 
 ```text
-LeetCode Submission
+User clicks Submit
         ↓
-Content Script Detection
+content.js detects button click
         ↓
-Accepted Result Observer
+MutationObserver waits for Accepted result
         ↓
-Code Extraction From Monaco Editor
+inject.js extracts code from Monaco / Ace editor
         ↓
-GitHub REST API Upload
+extractor.js collects title, difficulty, language, topics, stats
         ↓
-README Auto Generation
+sync.js fetches LeetCode GraphQL API / GFG Submissions API
+        ↓
+GitHub REST API uploads solution + problem README
+        ↓
+Root README updated with latest stats
 ```
-
+ 
 ---
-
+ 
 # 🔒 Security
-
-* Tokens are stored locally using:
-
-```text
-chrome.storage.local
-```
-
+ 
+* GitHub token stored locally via `chrome.storage.local`
 * No external backend server
 * No third-party database
 * No user tracking
-
+* GFG stats fetched using your own browser session — no credentials leave your machine
 ---
-
+ 
 # 📌 Supported Languages
-
+ 
 | Language   | Extension |
 | ---------- | --------- |
 | Java       | .java     |
@@ -378,135 +312,127 @@ chrome.storage.local
 | Python     | .py       |
 | JavaScript | .js       |
 | C          | .c        |
-
+ 
 ---
-
+ 
+# 📊 Supported Platforms
+ 
+| Platform      | Difficulties Supported                    |
+| ------------- | ----------------------------------------- |
+| LeetCode      | Easy, Medium, Hard                        |
+| GeeksForGeeks | School, Basic, Easy, Medium, Hard         |
+ 
+---
+ 
 # 🐛 Troubleshooting
-
-## Extension loads but no sync
-
-Reload extension:
-
-```text
-chrome://extensions
-```
-
-Then refresh LeetCode.
-
+ 
+## Extension loads but nothing syncs
+ 
+Go to `chrome://extensions` → reload SyncLeetX → refresh the LeetCode/GFG tab.
+ 
 ---
-
+ 
 ## GitHub 401 Error
-
-Your token is invalid or expired.
-
-Generate a new Fine-Grained GitHub token.
-
+ 
+Token is invalid or expired. Generate a new Fine-Grained token at `github.com/settings/tokens`.
+ 
 ---
-
-## Problem says Already Synced
-
-Open extension service worker console and run:
-
+ 
+## Already Synced message
+ 
+Open the extension service worker console (`chrome://extensions` → Service Worker) and run:
+ 
 ```javascript
-chrome.storage.local.remove("lastSyncedProblem");
+chrome.storage.local.remove("lastSynced");
 ```
-
+ 
 ---
-
+ 
+## GFG stats show 0
+ 
+Make sure you are logged into GFG in the same browser. The extension reads your session to fetch stats.
+ 
+---
+ 
 ## No code extracted
-
-Refresh the LeetCode page and submit again.
-
+ 
+Refresh the problem page and submit again. On GFG, make sure the Ace editor has fully loaded before submitting.
+ 
 ---
-
-# 🧩 Project Architecture
-
-```text
-SyncLeetX
-│
-├── manifest.json
-├── background.js
-├── content.js
-├── sync.js
-├── extractor.js
-├── inject.js
-├── storage.js
-├── constants.js
-└── popup.html
-```
-
+ 
+# 🧩 File Responsibilities
+ 
+| File            | What it does                                              |
+| --------------- | --------------------------------------------------------- |
+| `manifest.json` | Tells Chrome which sites to run on and which files to load |
+| `content.js`    | Watches for Submit click and Accepted result              |
+| `inject.js`     | Reads code from Monaco/Ace editor inside the page         |
+| `extractor.js`  | Extracts title, difficulty, language, username, GFG stats |
+| `sync.js`       | Calls APIs, builds READMEs, uploads to GitHub             |
+| `storage.js`    | Saves and loads last synced problem key                   |
+| `background.js` | Handles LeetCode session cookie access                    |
+| `popup.html`    | The UI when you click the extension icon                  |
+| `popup.js`      | Reads storage and displays stats in the popup             |
+| `constants.js`  | Shared constants like supported languages                 |
+ 
 ---
-
+ 
 # 📈 Future Improvements
-
+ 
 * 🌙 Dark themed popup UI
 * 📊 Contest statistics support
-* 🧠 AI-generated explanations
+* 🧠 AI-generated problem explanations
 * 📱 Firefox extension support
-* ☁️ Cloud backup
+* ☁️ Cloud backup option
 * 🏆 Daily streak tracking
 * 📉 Submission analytics dashboard
-
+* 🔔 Sync notifications
 ---
-
+ 
 # 👨‍💻 Author
-
+ 
 ## Thatikonda Sanketh
-
+ 
 * B.Tech CSE Student
 * Passionate about development, automation, and problem solving
-
-GitHub:
-
-[https://github.com/Sanzzz1125](https://github.com/Sanzzz1125)
-
+GitHub: [https://github.com/Sanzzz1125](https://github.com/Sanzzz1125)
+ 
 ---
-
+ 
 # ⭐ Contributing
-
+ 
 Contributions are welcome.
-
-1. Fork repository
-2. Create feature branch
-3. Commit changes
-4. Open Pull Request
-
+ 
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Open a Pull Request
 ---
-
+ 
 # 📜 License
-
+ 
 MIT License
-
+ 
 ---
-
+ 
 # 🌟 Support
-
-If you like this project:
-
+ 
+If this project helps you:
+ 
 ⭐ Star the repository
 🍴 Fork the project
 📢 Share with friends
-
+ 
 ---
-
+ 
 # 📚 Reference Repository
-
-Want to see a real working synced LeetCode repository generated using SyncLeetX?
-
-Check out my LeetCode repository for reference:
-
-[https://github.com/Sanzzz1125/LeetCode-practice](https://github.com/Sanzzz1125/LeetCode-practice)
-
-You can explore:
-
-* Auto-generated README files
-* Difficulty-based folder structure
-* Synced LeetCode statistics
-* Problem-wise organized solutions
-* Real GitHub sync workflow
-
+ 
+See a real working repository generated by SyncLeetX:
+ 
+[https://github.com/Sanzzz1125/CodeSync](https://github.com/Sanzzz1125/CodeSync)
+ 
+Explore auto-generated READMEs, difficulty-based folders for both LeetCode and GFG, and live synced statistics.
+ 
 ---
-
-# 🚀 SyncLeetX
-
-> Auto-sync your LeetCode journey to GitHub like a pro.
+ 
+> SyncLeetX — Auto-sync your coding journey to GitHub like a pro. 🚀
