@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SyncLeetX</title>
+        <link rel="stylesheet" href="popup.css" />
+    </head>
+    <body>
+        <div class="container">
+            <!-- Top Bar -->
+            <div class="top-card">
+                <div>
+                    <h1>SyncLeetX ⚡</h1>
+                    <p>Track • Sync • Dominate</p>
+                </div>
+                <div class="top-actions">
+                    <button id="settingsToggle">⚙️</button>
+                </div>
+            </div>
+
+            <!-- Platform Toggle -->
+            <div class="platform-toggle">
+                <button class="toggle-btn active" id="lcBtn">
+                    <span class="toggle-icon">🟡</span> LeetCode
+                </button>
+                <button class="toggle-btn" id="gfgBtn">
+                    <span class="toggle-icon">🟢</span> GFG
+                </button>
+            </div>
+
+            <!-- ======================== -->
+            <!-- LEETCODE VIEW            -->
+            <!-- ======================== -->
+            <div id="lcView">
+                <div class="stats-grid">
+                    <div class="card total-card">
+                        <span>Total Solved</span>
+                        <h2 id="lcTotal">0</h2>
+                    </div>
+                    <div class="card easy-card">
+                        <span>Easy</span>
+                        <h2 id="lcEasy">0</h2>
+                    </div>
+                    <div class="card medium-card">
+                        <span>Medium</span>
+                        <h2 id="lcMedium">0</h2>
+                    </div>
+                    <div class="card hard-card">
+                        <span>Hard</span>
+                        <h2 id="lcHard">0</h2>
+                    </div>
+                </div>
+
+                <div class="profile-card">
+                    <div class="profile-left">
+                        <div class="avatar">👨‍💻</div>
+                        <div>
+                            <h3 id="lcUsername">Loading...</h3>
+                            <p>LeetCode Warrior</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="latest-card">
+                    <p>Latest Solved</p>
+                    <h3 id="lcLatest">Loading...</h3>
+                </div>
+            </div>
+
+            <!-- ======================== -->
+            <!-- GFG VIEW                 -->
+            <!-- ======================== -->
+            <div id="gfgView" class="hidden">
+                <div class="stats-grid gfg-grid">
+                    <div class="card total-card">
+                        <span>Total Solved</span>
+                        <h2 id="gfgTotal">0</h2>
+                    </div>
+                    <div class="card school-card">
+                        <span>School</span>
+                        <h2 id="gfgSchool">0</h2>
+                    </div>
+                    <div class="card basic-card">
+                        <span>Basic</span>
+                        <h2 id="gfgBasic">0</h2>
+                    </div>
+                    <div class="card easy-card">
+                        <span>Easy</span>
+                        <h2 id="gfgEasy">0</h2>
+                    </div>
+                    <div class="card medium-card">
+                        <span>Medium</span>
+                        <h2 id="gfgMedium">0</h2>
+                    </div>
+                    <div class="card hard-card">
+                        <span>Hard</span>
+                        <h2 id="gfgHard">0</h2>
+                    </div>
+                </div>
+
+                <div class="profile-card">
+                    <div class="profile-left">
+                        <div class="avatar">🧠</div>
+                        <div>
+                            <h3 id="gfgUsername">GFG User</h3>
+                            <p>GFG Problem Solver</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="latest-card">
+                    <p>Latest Solved</p>
+                    <h3 id="gfgLatest">Loading...</h3>
+                </div>
+            </div>
+
+            <div class="footer">
+                <span>Powered by SyncLeetX ⚡</span>
+            </div>
+        </div>
+
+        <!-- Settings Modal -->
+        <div class="settings-modal hidden" id="settingsModal">
+            <div class="settings-card">
+                <h3>Sync Settings</h3>
+                <input
+                    type="text"
+                    id="githubUsername"
+                    placeholder="GitHub Username"
+                />
+                <input
+                    type="text"
+                    id="repoName"
+                    placeholder="Repository Name"
+                />
+                <input
+                    type="password"
+                    id="githubToken"
+                    placeholder="GitHub Token"
+                />
+                <button id="saveBtn">Save Settings</button>
+            </div>
+        </div>
+
+        <script src="popup.js"></script>
+    </body>
+</html>
